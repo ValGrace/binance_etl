@@ -1,6 +1,6 @@
 import pandas as pd
 from decimal import Decimal
-from extract import prices, trades, order_book, klines
+# from extract import prices, trades, order_book, klines
 
 class Transform:
     def __init__(self, prices, trades, order_book, klines):
@@ -36,10 +36,10 @@ class Transform:
         klines_df = pd.DataFrame(self.klines, columns=columns)
         return klines_df
 
-transformed = Transform(prices, trades, order_book, klines)
-coin_prices = transformed.transform_prices()
-recent_trades = transformed.transform_trades()
-latest_orders = transformed.transform_trades()
-recent_klines = transformed.transform_trades()
+# transformed = Transform(prices, trades, order_book, klines)
+# coin_prices = transformed.transform_prices()
+# recent_trades = transformed.transform_trades()
+# latest_orders = transformed.transform_trades()
+# recent_klines = transformed.transform_trades()
 
-print(coin_prices)
+# print(coin_prices)
