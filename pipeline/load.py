@@ -38,7 +38,7 @@ class LoadData:
         if self.recent_klines.empty:
             print("Recent trades do not exist")
             return
-        self.recent_klines.to_sql(name="recent_trades", con=self.engine, if_exists="append", index=False)
+        self.recent_klines.to_sql(name="recent_klines", con=self.engine, if_exists="replace", index=False)
 
         print(f"Loaded {len(self.recent_klines)} records")
 
@@ -46,7 +46,7 @@ class LoadData:
         if self.latest_orders.empty:
             print("Recent trades do not exist")
             return
-        self.latest_orders.to_sql(name="latest_orders", con=self.engine, if_exists="append", index=False)
+        self.latest_orders.to_sql(name="latest_orders", con=self.engine, if_exists="replace", index=False)
 
         print(f"Loaded {len(self.latest_orders)} records")
 

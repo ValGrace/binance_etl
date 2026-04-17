@@ -15,8 +15,8 @@ def pipeline():
         transformed = Transform(prices, trades, order_book, klines)
         coin_prices = transformed.transform_prices()
         recent_trades = transformed.transform_trades()
-        latest_orders = transformed.transform_trades()
-        recent_klines = transformed.transform_trades()
+        latest_orders = transformed.transform_order_book()
+        recent_klines = transformed.transform_klines()
 
         load_data = LoadData(coin_prices, recent_trades, recent_klines, latest_orders)
         load_data.load_market_coins()

@@ -32,7 +32,7 @@ class Transform:
     
 
     def transform_klines(self):
-        columns = ["open_time", "open_price", "high_price", "low_price", "close_price", "volume", "close_time", "quote_asset_volume", "no_of_trades", "base_asset_volume", "quote_asset_volume", "ignore"]
+        columns = ["open_time", "open_price", "high_price", "low_price", "close_price", "volume", "close_time", "quote_asset_volume", "no_of_trades", "taker_buy_base_asset_volume", "taker_buy_quote_asset_volume", "ignore"]
         klines_df = pd.DataFrame(self.klines, columns=columns)
         return klines_df
 
