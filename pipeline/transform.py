@@ -35,14 +35,11 @@ class Transform:
         columns = ["open_time", "open_price", "high_price", "low_price", "close_price", "volume", "close_time", "quote_asset_volume", "no_of_trades", "base_asset_volume", "quote_asset_volume", "ignore"]
         klines_df = pd.DataFrame(self.klines, columns=columns)
         return klines_df
-    
-prices = prices.extract_crypto()
-trades = trades.extract_crypto()
-order_book = order_book.extract_crypto()
-klines = klines.extract_crypto()
 
 transformed = Transform(prices, trades, order_book, klines)
 coin_prices = transformed.transform_prices()
 recent_trades = transformed.transform_trades()
 latest_orders = transformed.transform_trades()
 recent_klines = transformed.transform_trades()
+
+print(coin_prices)
